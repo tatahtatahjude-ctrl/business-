@@ -78,7 +78,14 @@ h1 em { color: var(--green); font-weight: 400; }
 .contact-content { display: flex; align-items: end; justify-content: space-between; gap: 30px; }
 .button-light { flex-shrink: 0; background: var(--white); color: var(--ink); }
 .button-light:hover { background: #e9eee8; }
-.button-light span { color: var(--coral); }
+#contact .button-light span { color: var(--coral); }
+.contact-form { width: min(420px, 100%); padding: 28px; background: var(--white); color: var(--ink); }
+.contact-form label { display: block; margin: 14px 0 7px; font-size: 11px; font-weight: 700; }
+.contact-form input, .contact-form textarea { width: 100%; border: 1px solid var(--line); border-radius: 0; background: #fafaf7; padding: 11px 12px; color: var(--ink); font: inherit; }
+.contact-form textarea { resize: vertical; }
+.contact-form .button { margin-top: 16px; border: 0; cursor: pointer; }
+.contact-form .errorlist { margin: 5px 0 0; padding: 0; color: #b04a3a; font-size: 11px; list-style: none; }
+.form-success { margin: 0 0 12px; border-left: 3px solid var(--coral); padding: 9px 12px; background: #eef3ef; font-size: 12px; }
 .site-footer { gap: 24px; color: var(--muted); font-size: 11px; }
 .site-footer p { margin: 0; }
 .site-footer .wordmark { color: var(--ink); font-size: 16px; }

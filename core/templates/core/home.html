@@ -61,7 +61,23 @@
             <p class="eyebrow"><span></span> LET'S TALK</p>
             <div class="contact-content">
                 <h2>Have something<br>in mind?</h2>
-                <a class="button button-light" href="mailto:hello@yourbusiness.com">Start a conversation <span aria-hidden="true">↗</span></a>
+                <form class="contact-form" method="post">
+                    {% csrf_token %}
+                    {% if message_sent %}
+                        <p class="form-success">Thanks, {{ form_name }}. We received your message.</p>
+                    {% endif %}
+                    {{ form.non_field_errors }}
+                    <label for="{{ form.name.id_for_label }}">Name</label>
+                    {{ form.name }}
+                    {{ form.name.errors }}
+                    <label for="{{ form.email.id_for_label }}">Email</label>
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                    <label for="{{ form.message.id_for_label }}">Message</label>
+                    {{ form.message }}
+                    {{ form.message.errors }}
+                    <button class="button button-light" type="submit">Send message <span aria-hidden="true">↗</span></button>
+                </form>
             </div>
         </section>
     </main>
