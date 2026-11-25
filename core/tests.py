@@ -8,7 +8,7 @@ class HomePageTests(TestCase):
 		response = self.client.get("/")
 
 		self.assertEqual(response.status_code, 200)
-		self.assertContains(response, "Your Business")
+		self.assertContains(response, "Bookwise")
 		self.assertContains(response, "Services")
 
 	def test_contact_form_accepts_valid_submission(self):
