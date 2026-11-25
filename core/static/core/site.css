@@ -102,6 +102,18 @@ h1 em { color: var(--green); font-weight: 400; }
 .services-detail h2 { font-size: 28px; }
 .services-detail p { color: var(--muted); font-size: 13px; line-height: 1.8; }
 
+.booking-page { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 8vw; min-height: 610px; padding: 90px 12vw; background: var(--white); }
+.booking-intro h1 { font-size: clamp(44px, 5vw, 68px); }
+.booking-intro h1 em { color: var(--green); }
+.booking-intro > p:last-child { max-width: 360px; color: var(--muted); line-height: 1.8; }
+.booking-panel { max-width: 540px; }
+.booking-form { padding: 30px; border: 1px solid var(--line); }
+.booking-form label { display: block; margin: 14px 0 7px; font-size: 11px; font-weight: 700; }
+.booking-form input, .booking-form textarea { width: 100%; border: 1px solid var(--line); background: #fafaf7; padding: 11px 12px; color: var(--ink); font: inherit; }
+.booking-form textarea { resize: vertical; }
+.booking-form .button { margin-top: 18px; border: 0; cursor: pointer; }
+.booking-form .errorlist { margin: 5px 0 0; padding: 0; color: #b04a3a; font-size: 11px; list-style: none; }
+
 @media (max-width: 760px) {
     .site-header, .site-footer { padding-right: 6vw; padding-left: 6vw; }
     nav { gap: 17px; }
@@ -118,6 +130,8 @@ h1 em { color: var(--green); font-weight: 400; }
     .services-detail, .services-detail:first-child { min-height: 0; padding: 38px 7vw; border-right: 0; border-bottom: 1px solid var(--line); }
     .services-detail:last-child { border-bottom: 0; }
     .services-detail .service-number { margin-bottom: 20px; }
+    .booking-page { grid-template-columns: 1fr; gap: 35px; padding: 65px 7vw; }
+    .booking-form { padding: 20px; }
     .site-footer { flex-wrap: wrap; }
     .site-footer p { order: 1; width: 100%; }
 }

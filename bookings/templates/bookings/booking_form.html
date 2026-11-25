@@ -1,0 +1,63 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Request a booking | Your Business</title>
+    <link rel="stylesheet" href="{% static 'core/site.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <a class="wordmark" href="{% url 'home' %}">Your<span>Business</span></a>
+        <nav aria-label="Main navigation">
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'home' %}#about">About</a>
+            <a class="nav-contact" href="{% url 'home' %}#contact">Contact <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <main class="booking-page">
+        <section class="booking-intro">
+            <p class="eyebrow"><span></span> MAKE A REQUEST</p>
+            <h1>Request a <em>booking.</em></h1>
+            <p>Choose a preferred date and tell us a little about what you need.</p>
+        </section>
+
+        <section class="booking-panel">
+            {% if submitted %}
+                <p class="form-success">Your booking request has been received. We will be in touch soon.</p>
+            {% endif %}
+
+            <form class="booking-form" method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+
+                <label for="{{ form.name.id_for_label }}">Name</label>
+                {{ form.name }}
+                {{ form.name.errors }}
+
+                <label for="{{ form.email.id_for_label }}">Email</label>
+                {{ form.email }}
+                {{ form.email.errors }}
+
+                <label for="{{ form.requested_date.id_for_label }}">Preferred date</label>
+                {{ form.requested_date }}
+                {{ form.requested_date.errors }}
+
+                <label for="{{ form.notes.id_for_label }}">Notes</label>
+                {{ form.notes }}
+                {{ form.notes.errors }}
+
+                <button class="button" type="submit">Submit request <span aria-hidden="true">→</span></button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="wordmark" href="{% url 'home' %}">Your<span>Business</span></a>
+        <p>Thoughtful service, every step of the way.</p>
+        <span>© {% now "Y" %} Your Business</span>
+    </footer>
+</body>
+</html>
