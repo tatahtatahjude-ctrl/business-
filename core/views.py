@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from .forms import ContactForm
+from .models import ContactMessage
 
 
 def home(request):
@@ -11,7 +12,9 @@ def home(request):
 	if request.method == "POST":
 		form = ContactForm(request.POST)
 		if form.is_valid():
-			form_name = form.cleaned_data["name"]
+			contact_message = form.cleaned_data
+			form_name = contact_message["name"]
+			ContactMessage.objects.create(**contact_message)
 			message_sent = True
 			form = ContactForm()
 
