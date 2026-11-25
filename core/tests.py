@@ -33,3 +33,11 @@ class HomePageTests(TestCase):
 
 		self.assertEqual(response.status_code, 200)
 		self.assertContains(response, "This field is required")
+
+	def test_services_page_loads(self):
+		response = self.client.get("/services/")
+
+		self.assertEqual(response.status_code, 200)
+		self.assertContains(response, "Personal service")
+		self.assertContains(response, "Careful work")
+		self.assertContains(response, "Reliable support")

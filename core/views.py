@@ -23,3 +23,7 @@ def home(request):
 		"message_sent": message_sent,
 		"form_name": form_name,
 	})
+
+
+def services(request):
+	return render(request, "core/services.html")

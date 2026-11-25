@@ -1,0 +1,56 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal, careful, and reliable business services.">
+    <title>Services | Your Business</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/site.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <a class="wordmark" href="{% url 'home' %}">Your<span>Business</span></a>
+        <nav aria-label="Main navigation">
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'home' %}#about">About</a>
+            <a class="nav-contact" href="{% url 'home' %}#contact">Contact <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <main class="services-page">
+        <div class="services-page-header">
+            <p class="eyebrow"><span></span> WHAT WE DO</p>
+            <h1>Services shaped<br><em>around you.</em></h1>
+            <p>Clear support, thoughtful planning, and dependable follow-through from the first conversation to the final result.</p>
+        </div>
+
+        <section class="services-detail-list" aria-label="Our services">
+            <article class="services-detail">
+                <span class="service-number">01</span>
+                <h2>Personal service</h2>
+                <p>Clear answers and a friendly person who takes the time to understand what you need.</p>
+            </article>
+            <article class="services-detail">
+                <span class="service-number">02</span>
+                <h2>Careful work</h2>
+                <p>Thoughtful planning and attention to detail, from the first conversation to the final result.</p>
+            </article>
+            <article class="services-detail">
+                <span class="service-number">03</span>
+                <h2>Reliable support</h2>
+                <p>Practical help you can count on, delivered with care and a commitment to doing things right.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="wordmark" href="{% url 'home' %}">Your<span>Business</span></a>
+        <p>Thoughtful service, every step of the way.</p>
+        <span>© {% now "Y" %} Your Business</span>
+    </footer>
+</body>
+</html>
